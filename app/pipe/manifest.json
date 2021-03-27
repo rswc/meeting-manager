@@ -1,7 +1,7 @@
 {
-  "name": "meeting_manager_pipe",
-  "description": "Meeting Manager pipe utility for communication between Web Extension and Python script",
-  "path": "C:\\Users\\pavveu\\code\\projects\\meeting-manager\\app\\pipe\\win_launch.bat",
-  "type": "stdio",
-  "allowed_extensions": [ "meeting_manager@bigblueboys.hacknarok" ]
+"name": "meeting_manager_pipe",
+ "description": "Meeting Manager pipe utility for communication between Web Extension and Python script",
+ "path": "",
+ "type": "stdio",
+ "allowed_extensions": ["meeting_manager@bigblueboys.hacknarok"]
 }
