@@ -1,11 +1,30 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>New meeting</title>
 </head>
 <body>
     <h1>Add this meeting to your calendar?</h1>
+    <form id="form">
+        <label for="url">URL:</label>
+        <input id="url" name="Link" required>
+        <label for="title">Title:</label>
+        <input id="title" name="Title">
+        <label for="date">Date:</label>
+        <input type="datetime-local" id="date" name="Date" required>
+        <select name="Reccurring" id="reccurring">
+            <option value="NO">One-time</option>
+            <option value="EVERY_WEEK">Weekly</option>
+            <option value="EVERY_OTHER_WEEK">Every other week</option>
+            <option value="DAILY">Daily</option>
+            <option value="MONTHLY">Monthly</option>
+        </select>
+        <label for="comment">Comment:</label>
+        <input id="comment" name="Comment">
+        <input type="hidden" id="type" name="Type" value="TYPE_ZOOM">
+        <button type="submit">send em</button>
+    </form>
+    <script src="new_meeting_popup.js"></script>
 </body>
 </html>

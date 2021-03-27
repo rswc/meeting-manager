@@ -1,11 +1,24 @@
-listener = browser.webRequest.onBeforeRequest.addListener(
+browser.webRequest.onCompleted.addListener(
     (details) => {
+        //TODO: check if url is a meeting
         console.log(details);
+        browser.browserAction.setPopup(
+            {
+                tabId: details.tabId,
+                popup: browser.runtime.getURL("new_meeting_popup.html")
+            }
+        );
+        browser.browserAction.setBadgeText(
+            {
+                text: "*",
+                tabId: details.tabId
+            }
+        );
     },
     {urls: ["*://*.mozilla.org/*"], types:["main_frame"]}
 );
 
-var port = browser.runtime.connectNative("meeting-manager");
+var port = browser.runtime.connectNative("meeting_manager_pipe");
 
 /*
 Listen for messages from the app.
