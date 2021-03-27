@@ -42,8 +42,12 @@ def send_message(message: str):
 send_message("[PIPE] starting pipe process.")
 while True:
 
+    send_message("AWAITING request!!!")
     web_extension_request = read_message()
+    send_message("Received request!!!")
+    send_message(web_extension_request)
     event_respond = event.pass_request()
+    send_message("seding respond")
     send_message(event_respond)
 
 send_message("[PIPE] ending pipe process.")
