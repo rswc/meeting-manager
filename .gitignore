@@ -3,3 +3,4 @@
 test.py
 sample.json
 __pycache__
+.venv/
