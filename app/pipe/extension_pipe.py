@@ -18,8 +18,6 @@ def getMessage():
         sys.exit(0)
     messageLength = struct.unpack('@I', rawLength)[0]
     message = sys.stdin.buffer.read(messageLength).decode('utf-8')
-    with open ("yomama.txt", 'a') as debug:
-        debug.write(len(raw_length), message)
     return json.loads(message)
 
 # Encode a message for transmission,
