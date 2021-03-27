@@ -2,6 +2,7 @@ from queue import PriorityQueue
 from event import event as ev
 import json, os, datetime
 from multiprocessing import Process
+import time
 
 MAX_QUEUE_TIME =  datetime.datetime.now().timestamp() + 53
 
@@ -24,7 +25,7 @@ def que_loop(arg):
            t = datetime.datetime.fromtimestamp(e[0]) - datetime.datetime.now()
            print(f"Time to the next event: {int(t.total_seconds()/60/60)}h {int((t.total_seconds()/60)%60)}m" )
 
-        import time
+        
         time.sleep(5)
 
 
