@@ -31,7 +31,7 @@ class Event:
         with open(JSON_PATH, encoding='utf8') as outfile:
             return json.load(outfile)
 
-    def edit_json(self, event_to_change):
+    def update_json(self, event_to_change):
         '''Update particular event (or events) in events.json'''
         m_json = self.get_all_events()
         
@@ -45,7 +45,14 @@ class Event:
         with open(JSON_PATH, "w", encoding='utf8') as outfile: #Save file
             json.dump(dic, outfile, indent=4, ensure_ascii=False)
 
+    def delete_event(self, event_to_delete):
+        '''Delete passed event(s) '''
+        m_json = self.get_all_events()
+        for key in event_to_delete.keys():
+            del m_json[key]
 
+        self.__save(m_json)
+    
 
 # data ={}
 # data['Title'] = "Sysopsy"
