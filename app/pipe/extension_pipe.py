@@ -18,7 +18,7 @@ def getMessage():
         sys.exit(0)
     messageLength = struct.unpack('@I', rawLength)[0]
     message = sys.stdin.buffer.read(messageLength).decode('utf-8')
-    return json.loads(message)
+    return message
 
 # Encode a message for transmission,
 # given its content.
@@ -42,6 +42,10 @@ def send_message(message: str):
 send_message("[PIPE] starting pipe process.")
 while True:
     web_extension_request = read_message()
-    event_response = event.pass_request(web_extension_request)
+    send_message(str(type(web_extension_request)))
+    try:
+        event_response = event.pass_request(web_extension_request)
+    except Exception as e:
+        send_message(str(e))
     send_message(event_response)
 send_message("[PIPE] ending pipe process.")

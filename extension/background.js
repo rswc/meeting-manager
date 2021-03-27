@@ -24,13 +24,15 @@ var port = browser.runtime.connectNative("meeting_manager_pipe");
 Listen for messages from the app.
 */
 port.onMessage.addListener((response) => {
-  console.log("Received: " + response);
+  console.log("Received: " + JSON.stringify(response));
 });
 
-/*
-On a click on the browser action, send the app a message.
-*/
-browser.browserAction.onClicked.addListener(() => {
-  console.log("Sending:  ping");
-  port.postMessage("ping");
+browser.runtime.onMessage.addListener((msg) => {
+    if (msg.action === 'SEND') {
+        port.postMessage({
+                cmd: msg.cmd,
+                data: msg.data
+            }
+        );
+    }
 });

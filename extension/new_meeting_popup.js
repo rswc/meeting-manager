@@ -50,15 +50,12 @@ ui.btn_back.addEventListener("click", () => {
 ui.form.addEventListener("submit", (e) => {
     e.preventDefault();
     const FD = new FormData(ui.form);
-    console.log(Object.fromEntries(FD.entries()));
     // send new event request to python service
-    browser.runtime.sendNativeMessage(
-        "meeting_manager_pipe",
-        JSON.stringify({
-            cmd: "ADD",
-            data: Object.fromEntries(FD.entries())
-        })
-    );
+    browser.runtime.sendMessage({
+        action: "SEND",
+        cmd: "ADD",
+        data: Object.fromEntries(FD.entries())
+    });
     // display success info
     // option to delete/update event?
 });
