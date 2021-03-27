@@ -18,6 +18,8 @@ def getMessage():
         sys.exit(0)
     messageLength = struct.unpack('@I', rawLength)[0]
     message = sys.stdin.buffer.read(messageLength).decode('utf-8')
+    with open ("yomama.txt", 'a') as debug:
+        debug.write(len(raw_length), message)
     return json.loads(message)
 
 # Encode a message for transmission,
@@ -41,13 +43,7 @@ def send_message(message: str):
 
 send_message("[PIPE] starting pipe process.")
 while True:
-
-    send_message("AWAITING request!!!")
     web_extension_request = read_message()
-    send_message("Received request!!!")
-    send_message(web_extension_request)
-    event_respond = event.pass_request()
-    send_message("seding respond")
-    send_message(event_respond)
-
+    event_response = event.pass_request(web_extension_request)
+    send_message(event_response)
 send_message("[PIPE] ending pipe process.")
