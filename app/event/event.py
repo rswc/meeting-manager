@@ -5,7 +5,7 @@ Date: datetime format
 Recurring options: EVERY_WEEK, EVERY_OTHER_WEEK, DAILY, MONTHLY
 
 """
-JSON_PATH = "events.json"
+JSON_PATH = os.path.dirname(os.path.dirname(os.path.abspath(__file__))) + r"\event\events.json"
 
 class Event:
     '''Holds data of a specific event'''
@@ -54,16 +54,42 @@ class Event:
         self.__save(m_json)
     
 
-# data ={}
-# data['Title'] = "Sysopsy"
-# data['Link'] = r"https://www.google.com"
-# data['Comment'] = "Moje ulubione zajęcia"
-# data['Date'] = str(datetime.datetime.now()) #TODO date
-# data['Recurring'] = "EVERY_WEEK" #TODO recurrent
-# data['Type'] = "TYPE_BBB"
 
-# s = { "d13b404a95544b6eb4f4" : data}
-# test_json = json.dumps(data, indent=4, ensure_ascii=False)
-# a = Event(test_json)
-# a.save()
+def get_timestamp(x):
+    # a,b = x[1].split(' ')
+    # day, month, year = a.split('/')
+    # hour,minute = b.split(':')
+    # t = datetime.datetime(int(year), int(month), int(day), int(hour), int(minute))
+    format_ = r'%d/%m/%Y %H:%M'
+    dt_object = datetime.datetime.strptime(x[1], format_)
+    return (dt_object.timestamp(), x[0])
+
+def get_events_for_queue():
+    '''Return list of tuples (timestamp, event_id)''' 
+    events = {}       
+    with open(JSON_PATH, encoding='utf8') as outfile:
+        events = json.load(outfile)
+
+    ret = list()
+
+    for key in events.keys():
+        ret.append((key, events[key]['Date']))
+        #print(key, events[key]['Date'])
+    ret = list(map(lambda x: get_timestamp(x), ret))
+    return ret
+
+
+get_events_for_queue()
+data ={}
+data['Title'] = "Sysopsy"
+data['Link'] = r"https://www.google.com"
+data['Comment'] = "Moje ulubione zajęcia"
+data['Date'] = '28/03/2021 12:30'
+data['Recurring'] = "EVERY_WEEK" #TODO recurrent
+data['Type'] = "TYPE_BBB"
+
+#s = { "d13b404a95544b6eb4f4" : data}
+test_json = json.dumps(data, indent=4, ensure_ascii=False)
+a = Event(test_json)
+a.save()
 # a.edit_json(s)
