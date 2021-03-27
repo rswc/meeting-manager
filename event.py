@@ -2,7 +2,7 @@ import datetime, json, uuid, os
 """
 Types: TYPE_ZOOM, TYPE_BBB
 Date: datetime format
-Recurrent options: EVERY_WEEK, EVERY_OTHER_WEEK, DAILY, MONTHLY
+Recurrent options: NO, EVERY_WEEK, EVERY_OTHER_WEEK, DAILY, MONTHLY
 
 """
 JSON_PATH = "events.json"
