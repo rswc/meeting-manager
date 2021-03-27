@@ -14,5 +14,13 @@
         "Date": "28/03/2021 12:30",
         "Recurring": "EVERY_WEEK",
         "Type": "TYPE_BBB"
+    },
+    "edd38b77f51a40ad8ed8": {
+        "Link": "https://developer.mozilla.org/en-US/docs/Web/API/Window/sessionStorage",
+        "Title": "Window.sessionStorage - Web APIs | MDN",
+        "Date": "27/02/2021 21:54",
+        "Reccurring": "NO",
+        "Comment": "",
+        "Type": "TYPE_ZOOM"
     }
 }
