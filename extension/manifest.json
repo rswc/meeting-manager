@@ -9,7 +9,7 @@
   
     "browser_specific_settings": {
       "gecko": {
-        "id": "meeting_manager@bigblueboys.hacknarok",
+        "id": "meeting-manager@bigblueboys.hacknarok",
         "strict_min_version": "50.0"
       }
     },
@@ -25,6 +25,7 @@
     },
   
     "permissions": [
+        "webRequest",
         "nativeMessaging",
         "*://*.zoom.us/*",
         "*://*.mozilla.org/*"
