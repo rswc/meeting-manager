@@ -5,7 +5,7 @@ listener = browser.webRequest.onBeforeRequest.addListener(
     {urls: ["*://*.mozilla.org/*"], types:["main_frame"]}
 );
 
-var port = browser.runtime.connectNative("meeting-manager");
+var port = browser.runtime.connectNative("meeting_manager_pipe");
 
 /*
 Listen for messages from the app.
