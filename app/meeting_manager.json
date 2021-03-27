@@ -1,0 +1,7 @@
+{
+  "name": "meeting_manager",
+  "description": "Host for communication with web extension",
+  "path": "C:\\Users\\pavveu\\code\\projects\\meeting-manager\\app\\meeting_manager_win.bat",
+  "type": "stdio",
+  "allowed_extensions": [ "meeting_manager@bigblueboys.hacknarok" ]
+}
