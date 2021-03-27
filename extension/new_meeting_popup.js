@@ -22,14 +22,43 @@ browser.tabs.query({
     }
 });
 
+ui.btn_back.addEventListener("click", () => {
+    console.log(ui.btn_back);
+    browser.tabs.query({
+        active: true,
+        currentWindow: true
+    }).then((tabs) => {
+        console.log(tabs);
+        browser.browserAction.setPopup(
+            {
+                tabId: tabs[0].id,
+                popup: null
+            }
+        ).then(() => {
+            browser.browserAction.setBadgeText(
+                {
+                    text: "",
+                    tabId: tabs[0].id
+                }
+            ).then(() => {
+                window.location.replace(browser.runtime.getURL("popup.html"));
+            });
+        });
+    });
+});
+
 ui.form.addEventListener("submit", (e) => {
     e.preventDefault();
     const FD = new FormData(ui.form);
     console.log(Object.fromEntries(FD.entries()));
+    // send new event request to python service
     browser.runtime.sendNativeMessage(
         "meeting_manager_pipe",
-        JSON.stringify(Object.fromEntries(FD.entries())));
-    // send new event request to python service
+        JSON.stringify({
+            cmd: "ADD",
+            data: Object.fromEntries(FD.entries())
+        })
+    );
     // display success info
     // option to delete/update event?
 });

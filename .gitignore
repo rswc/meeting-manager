@@ -2,3 +2,4 @@
 .vscode/
 test.py
 sample.json
+__pycache__
