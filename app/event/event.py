@@ -54,6 +54,14 @@ class Event:
         self.__save(m_json)
     
 
+def pass_request(json_string):
+    req = json.loads(json_string, encoding='utf8')
+    command = req['cmd']
+    j_data = req['data']
+    if command.lower() == 'add':
+        Event(j_data).save()
+        return "Saved succesfully"
+    return "Command not found"
 
 def get_timestamp(x):
     # a,b = x[1].split(' ')
@@ -79,17 +87,17 @@ def get_events_for_queue():
     return ret
 
 
-get_events_for_queue()
-data ={}
-data['Title'] = "Sysopsy"
-data['Link'] = r"https://www.google.com"
-data['Comment'] = "Moje ulubione zajęcia"
-data['Date'] = '28/03/2021 12:30'
-data['Recurring'] = "EVERY_WEEK" #TODO recurrent
-data['Type'] = "TYPE_BBB"
+# get_events_for_queue()
+# data ={}
+# data['Title'] = "Sysopsy"
+# data['Link'] = r"https://www.google.com"
+# data['Comment'] = "Moje ulubione zajęcia"
+# data['Date'] = '28/03/2021 12:30'
+# data['Recurring'] = "EVERY_WEEK" #TODO recurrent
+# data['Type'] = "TYPE_BBB"
 
 #s = { "d13b404a95544b6eb4f4" : data}
-test_json = json.dumps(data, indent=4, ensure_ascii=False)
-a = Event(test_json)
-a.save()
+# test_json = json.dumps(data, indent=4, ensure_ascii=False)
+# a = Event(test_json)
+# a.save()
 # a.edit_json(s)
