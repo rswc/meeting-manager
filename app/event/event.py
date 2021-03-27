@@ -6,6 +6,7 @@ Recurrent options: NO, EVERY_WEEK, EVERY_OTHER_WEEK, DAILY, MONTHLY
 
 """
 JSON_PATH = os.path.dirname(os.path.dirname(os.path.abspath(__file__))) + r"\event\events.json"
+JSON_TEST_PATH = os.path.dirname(os.path.dirname(os.path.abspath(__file__))) + r"\event\test.json"
 
 class Event:
     '''Holds data of a specific event'''
@@ -55,11 +56,12 @@ class Event:
     
 
 def pass_request(json_string):
-    req = json.loads(json_string, encoding='utf8')
-    command = req['cmd']
-    j_data = req['data']
+    req = json.loads(json_string)
+    command = req["cmd"]
+    j_data = req["data"]
     if command.lower() == 'add':
-        Event(j_data).save()
+        a = Event(json.dumps(j_data, ensure_ascii=False))
+        a.save()
         return "Saved succesfully"
     return "Command not found"
 
@@ -87,17 +89,31 @@ def get_events_for_queue():
     return ret
 
 
-# get_events_for_queue()
+
+# A = {
+#     "cmd":"ADD",
+#     "data":{
+#         "Link":"https://developer.mozilla.org/en-US/docs/Web/API/Window/sessionStorage",
+#         "Title":"Window.sessionStorage - Web APIs | MDN",
+#         "Date":"27/02/2021 21:12",
+#         "Reccurring":"NO",
+#         "Comment":"YO",
+#         "Type":"TYPE_ZOOM"}
+#         }
+
+# dumped=  json.dumps(A, indent=4, ensure_ascii=False)
+# pass_request(dumped)
+# # get_events_for_queue()
 # data ={}
 # data['Title'] = "Sysopsy"
-# data['Link'] = r"https://www.google.com"
+# data['Link'] = r"https://cwww.google.com"
 # data['Comment'] = "Moje ulubione zajęcia"
 # data['Date'] = '28/03/2021 12:30'
 # data['Recurring'] = "EVERY_WEEK" #TODO recurrent
 # data['Type'] = "TYPE_BBB"
 
-#s = { "d13b404a95544b6eb4f4" : data}
+# s = { "d13b404a95544b6eb4f4" : data}
 # test_json = json.dumps(data, indent=4, ensure_ascii=False)
 # a = Event(test_json)
 # a.save()
-# a.edit_json(s)
+# # a.edit_json(s)
