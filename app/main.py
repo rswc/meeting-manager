@@ -1,6 +1,7 @@
 from queue import PriorityQueue
 from event import event as ev
 import json, os, datetime
+from multiprocessing import Process
 
 MAX_QUEUE_TIME =  datetime.datetime.now().timestamp() + 53
 
@@ -10,12 +11,8 @@ def build_que(que):
         if x[0] - datetime.datetime.now().timestamp() > 0:
             que.put(x)
 
-
-
-
-if __name__ == "__main__":
-    
-
+def que_loop(arg):
+    print(arg)
     while(True):
 
         que = PriorityQueue()
@@ -27,4 +24,15 @@ if __name__ == "__main__":
            t = datetime.datetime.fromtimestamp(e[0]) - datetime.datetime.now()
            print(f"Time to the next event: {int(t.total_seconds()/60/60)}h {int((t.total_seconds()/60)%60)}m" )
 
-        sleep(10)
+        import time
+        time.sleep(5)
+
+
+
+if __name__ == "__main__":
+    p = Process(target=que_loop, args=('Peter',), name="YOOO")
+    p.start()
+    print("yo")
+    
+    
+    
