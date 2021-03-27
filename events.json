@@ -1,26 +1,42 @@
 {
-    "9af860255f414e95b691": {
+    "ebc8a058478d498094b7": {
         "Title": "Angielski",
         "Link": "https://www.google.com",
-        "Comment": "Moje ulubione zaj\u0119cia",
-        "Date": "2021-03-27 17:22:31.745187",
-        "Recurrent": "EVERY_WEEK",
-        "Type": "TYPE_ZOOM"
+        "Comment": "Moje ulubione zajęcia",
+        "Date": "2021-03-27 18:14:14.096713",
+        "Recurring": "EVERY_WEEK",
+        "Type": "TYPE_BBB"
     },
-    "d13b404a95544b6eb4f4": {
-        "Title": "Angielski",
+    "5bffcbebfa0842efa81e": {
+        "Title": "Sysopsy",
         "Link": "https://www.google.com",
-        "Comment": "Moje ulubione zaj\u0119cia",
-        "Date": "2021-03-27 17:23:50.200962",
-        "Recurrent": "EVERY_WEEK",
-        "Type": "TYPE_ZOOM"
+        "Comment": "Moje ulubione zajęcia",
+        "Date": "2021-03-27 18:13:46.858540",
+        "Recurring": "EVERY_WEEK",
+        "Type": "TYPE_BBB"
     },
-    "822d51eb0a7a4105bf63": {
+    "049e67265bff4ec58eb9": {
         "Title": "Angielski",
         "Link": "https://www.google.com",
-        "Comment": "Moje ulubione zaj\u0119cia",
-        "Date": "2021-03-27 17:24:50.254302",
-        "Recurrent": "EVERY_WEEK",
-        "Type": "TYPE_ZOOM"
+        "Comment": "Moje ulubione zajęcia",
+        "Date": "2021-03-27 18:14:00.329599",
+        "Recurring": "EVERY_WEEK",
+        "Type": "TYPE_BBB"
+    },
+    "1200709e565b439c9053": {
+        "Title": "Angielski",
+        "Link": "https://www.google.com",
+        "Comment": "Moje ulubione zajęcia",
+        "Date": "2021-03-27 18:14:01.645044",
+        "Recurring": "EVERY_WEEK",
+        "Type": "TYPE_BBB"
+    },
+    "236a1d41db2d4439b7c5": {
+        "Title": "Angielski",
+        "Link": "https://www.google.com",
+        "Comment": "Moje ulubione zajęcia",
+        "Date": "2021-03-27 18:14:14.096713",
+        "Recurring": "EVERY_WEEK",
+        "Type": "TYPE_BBB"
     }
 }
