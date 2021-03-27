@@ -11,6 +11,7 @@ const ui = document.getElementsByTagName('*');
 
 browser.tabs.query({
     active: true,
+    currentWindow: true,
     url: "*://*.mozilla.org/*"
 }).then((tabs) => {
     console.log(tabs);
@@ -23,6 +24,12 @@ browser.tabs.query({
 
 ui.form.addEventListener("submit", (e) => {
     e.preventDefault();
-    console.log(e);
     const FD = new FormData(ui.form);
+    console.log(Object.fromEntries(FD.entries()));
+    browser.runtime.sendNativeMessage(
+        "meeting_manager_pipe",
+        JSON.stringify(Object.fromEntries(FD.entries())));
+    // send new event request to python service
+    // display success info
+    // option to delete/update event?
 });
