@@ -12,7 +12,7 @@ const ui = document.getElementsByTagName('*');
 browser.tabs.query({
     active: true,
     currentWindow: true,
-    url: "*://*.mozilla.org/*"
+    url: ["*://*.mozilla.org/*", "*://*.zoom.us/*"]
 }).then((tabs) => {
     if (tabs.length) {
         ui.url.value = tabs[0].url;

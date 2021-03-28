@@ -11,12 +11,13 @@ body {
     display: flex;
     flex-direction: column;
     font-family: Lato;
-    background-image: linear-gradient(90deg, rgb(255, 255, 255) 0%, rgba(245, 245, 245, 0.938) 100%); 
+    /*background-image: url("b10.jpg");
+    */
 }
 
 button {
     border: none;
-    background-color: rgb(255, 215, 162);
+    background-color: rgb(255, 214, 29);
     box-shadow: 3px 3px 7px #0000006e;
     font-size: 1em;
     font-family: inherit;
@@ -28,7 +29,7 @@ button {
 }
 
 button:hover {
-    background-color: rgb(241, 176, 91);
+    background-color: rgb(255, 227, 101);
 }
 
 button:active {
@@ -42,6 +43,8 @@ button:active {
     display: grid;
     grid-template-rows: min-content min-content;
     grid-template-columns: auto max-content;
+    overflow: visible;
+    background-color: white;
 }
 
 .evt_title {
@@ -106,4 +109,8 @@ div{
 }
 .btnback{
     min-width: 100px;
+}
+#resp{
+    color: rgb(0, 199, 76);
+    transition: opacity 2s;
 }
