@@ -36,8 +36,9 @@ class Event:
         '''Update particular event (or events) in events.json'''
         m_json = self.get_all_events()
         
-        d_changes = event_to_change
-        for e_key in event_to_change.keys(): #Get key from event json
+        d_changes = json.loads(event_to_change)
+        #print(type(d_changes))
+        for e_key in d_changes.keys(): #Get key from event json
             m_json[e_key] = d_changes[e_key] #Update all
         
         self.__save(m_json)
@@ -92,6 +93,7 @@ def get_link(id):
 
 def pass_request(json_string):
     req = json.loads(json_string)
+    #print([key for key in req])
     command = req["cmd"]
     j_data = req["data"]
     if command.lower() == 'add':
@@ -112,12 +114,30 @@ def pass_request(json_string):
             if  time - datetime.datetime.now().timestamp() > 0: ret.append(al[key])
         return ret
         
-    # if command.lower() == "edit":
-    #     e = Event(json.dumps(j_data))
-    #     e.update_json(json.dumps(j_data))
-    #     return ret
+    if command.lower() == "edit":
+        #print(json.dumps(j_data))
+        e = Event(json.dumps(j_data))
+        e.update_json(json.dumps(j_data))
+        return "Succesfully updated"
 
     return f"Command not found \'{command}\'"
+
+
+A = {
+    "cmd":"EDIT",
+    "data":{
+        "db9c66e3cf0a49c6a6ee": {
+        "Title": "Systemy Operacyjne",
+        "Link": "https://zoom.us/j/6866658590?pwd=Y0d3c29OakpKQk1MT01ZbW5GVWpudz09",
+        "Comment": "Moje ulubione zajęcia",
+        "Date": "28/03/2021 9:59",
+        "Recurring": "EVERY_WEEK",
+        "Type": "TYPE_BBB"
+        }
+    }
+}
+print(pass_request(json.dumps(A, ensure_ascii=False, indent=4)))
+
 
 
 # A = {
@@ -130,10 +150,10 @@ def pass_request(json_string):
 #         "Comment":"YO",
 #         "Type":"TYPE_ZOOM"}
 #         }
-B = {
-  "cmd": "GET",
-  "data": 9
-}
+# B = {
+#   "cmd": "GET",
+#   "data": 9
+#}
 
 # dumped=  json.dumps(B, indent=4, ensure_ascii=False)
 # print(pass_request(dumped))
