@@ -44,6 +44,13 @@ ui.btn_back.addEventListener("click", () => {
     });
 });
 
+browser.runtime.onMessage.addListener((msg) => {
+    if (msg.action === 'RECV' && !Array.isArray(msg.data)) {
+        console.log(msg.data);
+        ui.resp.innerText = msg.data;
+    }
+});
+
 ui.form.addEventListener("submit", (e) => {
     e.preventDefault();
     const FD = new FormData(ui.form);

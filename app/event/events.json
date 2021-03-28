@@ -46,5 +46,21 @@
         "Reccurring": "NO",
         "Comment": "",
         "Type": "TYPE_ZOOM"
+    },
+    "ab9de26971034f9da756": {
+        "Link": "https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/Tabs/query",
+        "Title": "tabs.query() - Mozilla | MDN",
+        "Date": "28/02/2021 01:46",
+        "Reccurring": "NO",
+        "Comment": "KURAAW",
+        "Type": "TYPE_ZOOM"
+    },
+    "a2f08fcf3d3a45dba7b9": {
+        "Link": "https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/Tabs/query",
+        "Title": "tabs.query() - Mozilla | MDN",
+        "Date": "28/02/2021 01:46",
+        "Reccurring": "NO",
+        "Comment": "KURAAW",
+        "Type": "TYPE_ZOOM"
     }
 }
