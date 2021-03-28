@@ -11,6 +11,7 @@ body {
     display: flex;
     flex-direction: column;
     font-family: Lato;
+    background-color: #eee;
 }
 
 button {
@@ -20,7 +21,7 @@ button {
     font-size: 1em;
     font-family: inherit;
     padding: 7px;
-    margin: 5px 15px;
+    margin: 15px 15px;
     text-transform: uppercase;
     transition: .3s;
     cursor: pointer;
@@ -32,4 +33,63 @@ button:hover {
 
 button:active {
     box-shadow: 1px 1px 3px #0000006e;
+}
+
+.evt {
+    box-shadow: 2px 2px 7px #0000006e;
+    padding: 10px;
+    margin: 8px 0;
+    display: grid;
+    grid-template-rows: min-content min-content;
+    grid-template-columns: auto min-content;
+}
+
+.evt_title {
+    grid-row: 1;
+    grid-column: 1;
+}
+.evt_time {
+    grid-row: 1;
+    grid-column: 2;
+}
+.evt_misc {
+    grid-row: 2;
+h1{
+    margin-right: 15px;
+    margin-left: 15px;
+}
+
+h2{
+    margin-left: 15px;
+}
+form{
+    flex-direction: column;
+    display: flex;
+    margin-left: 40px;
+    margin-right: 40px;
+}
+
+input, select{
+    width: 300px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    height: 25px;
+    
+}
+
+
+div{
+    flex-direction: column;
+    display: flex;
+    
+}
+#btn_back{
+    margin-left: 35px;
+    margin-right: 35px;
+
+}
+#add_calendar{
+    align-self: center;
+    width: 300px;
+    text-shadow:rgb(241, 141, 10)
 }

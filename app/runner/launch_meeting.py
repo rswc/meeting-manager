@@ -11,6 +11,8 @@ def notify(message: str, duration=5):
     toast.show_toast("Meeting Manager", message, duration=duration, icon_path=icon_path)
 
 def launch_meeting(url, browser=None):
+    mozilla_path="C:\\Program Files\\Mozilla Firefox\\firefox.exe"
+    webbrowser.register('firefox', None, webbrowser.BackgroundBrowser(mozilla_path))
     webbrowser.get(browser).open_new_tab(url)
 
 ZOOM_URL = "https://zoom.us/j/6866658590?pwd=Y0d3c29OakpKQk1MT01ZbW5GVWpudz09"

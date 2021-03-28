@@ -79,6 +79,17 @@ def get_events_for_queue():
     ret = list(map(lambda x: get_timestamp(x), ret))
     return ret
 
+def get_displayname(id):
+    events = {}       
+    with open(JSON_PATH, encoding='utf8') as outfile:
+        events = json.load(outfile)
+    return events[id]["Title"]
+def get_link(id):
+    events = {}       
+    with open(JSON_PATH, encoding='utf8') as outfile:
+        events = json.load(outfile)
+    return events[id]["Link"]
+
 def pass_request(json_string):
     req = json.loads(json_string)
     command = req["cmd"]
