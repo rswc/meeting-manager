@@ -14,6 +14,7 @@ def launch_meeting(url, browser=None):
     webbrowser.get(browser).open_new_tab(url)
 
 ZOOM_URL = "https://zoom.us/j/6866658590?pwd=Y0d3c29OakpKQk1MT01ZbW5GVWpudz09"
+ZOOM_JOIN = "https://zoom.us/wc/6866658590/start" 
 
 if __name__ == '__main__':
     # Add firefox to path
@@ -25,5 +26,5 @@ if __name__ == '__main__':
     webbrowser.register('firefox', None, webbrowser.BackgroundBrowser(mozilla_path))
     url = "https://us02web.zoom.us/j/2732874617#success"
 
-    launch_meeting(ZOOM_URL, browser='firefox')
+    launch_meeting(ZOOM_JOIN, browser='firefox')
     
