@@ -108,7 +108,7 @@ def pass_request(json_string):
         ret = []
         for time, key in lt:
             al[key]["Timestamp"] = time
-            ret.append(al[key])
+            if time > 0: ret.append(al[key])
         
         
         return ret
@@ -131,8 +131,8 @@ B = {
   "data": 9
 }
 
-dumped=  json.dumps(B, indent=4, ensure_ascii=False)
-print(pass_request(dumped))
+# dumped=  json.dumps(B, indent=4, ensure_ascii=False)
+# print(pass_request(dumped))
 # # get_events_for_queue()
 # data ={}
 # data['Title'] = "Sysopsy"

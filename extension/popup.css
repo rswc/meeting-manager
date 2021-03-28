@@ -16,7 +16,7 @@ body {
 
 button {
     border: none;
-    background-color: rgb(241, 141, 10);
+    background-color: rgb(255, 215, 162);
     box-shadow: 3px 3px 7px #0000006e;
     font-size: 1em;
     font-family: inherit;
@@ -41,7 +41,7 @@ button:active {
     margin: 8px 0;
     display: grid;
     grid-template-rows: min-content min-content;
-    grid-template-columns: auto min-content;
+    grid-template-columns: auto max-content;
 }
 
 .evt_title {
@@ -97,4 +97,12 @@ div{
     width: 300px;
     text-shadow:3px 3px 7px #00000021;
     margin-top: 15px;
+}
+#btns{
+    align-self:flex-start;
+    flex-direction:row;
+    display: flex;
+}
+.btnback{
+    min-width: 100px;
 }
