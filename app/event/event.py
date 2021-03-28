@@ -126,13 +126,14 @@ def pass_request(json_string):
 #         "Comment":"YO",
 #         "Type":"TYPE_ZOOM"}
 #         }
-B = {
-  "cmd": "GET",
-  "data": 9
-}
 
-dumped=  json.dumps(B, indent=4, ensure_ascii=False)
-print(pass_request(dumped))
+# # B = {
+#   "cmd": "GET",
+#   "data": 9
+# }
+
+# dumped=  json.dumps(B, indent=4, ensure_ascii=False)
+# print(pass_request(dumped))
 # # get_events_for_queue()
 # data ={}
 # data['Title'] = "Sysopsy"
