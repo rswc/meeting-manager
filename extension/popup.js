@@ -27,6 +27,10 @@ function timeFormat() {
     }
 }
 
+function editEvent(el) {
+    console.log(el);
+}
+
 document.getElementById('btn_add').addEventListener('click', () => {
     window.location.replace(browser.runtime.getURL("new_meeting_popup.html"));
 });
@@ -37,7 +41,12 @@ browser.runtime.onMessage.addListener((msg) => {
         for (const evt of msg.data) {
             let el = document.createElement("div");
             el.classList.add("evt");
-            el.innerHTML = `<div class="evt_title">${evt.Title}</div><div class="evt_time" data-date="${evt.Date}" data-timestamp="${evt.Timestamp}">00</div><div class="evt_misc">${REC_TRANS[evt.Recurring || '']}</div>`;
+            el.innerHTML = `<div class="evt_title">${evt.Title}</div>
+                <div class="evt_time" data-date="${evt.Date}" data-timestamp="${evt.Timestamp}">${timeDiff(evt.Timestamp)}</div>
+                <div class="evt_misc">
+                    <span>${REC_TRANS[evt.Recurring || '']}</span>
+                    <!--<button onclick="editEvent(this);" data-event="${0}">EDIT</button>-->
+                </div>`;
             ui.events.appendChild(el);
         }
         interval = window.setInterval(timeFormat, 500);

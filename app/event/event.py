@@ -58,11 +58,15 @@ class Event:
 
 
 def get_timestamp(x):
-    # a,b = x[1].split(' ')
+    a,b = x[1].split(' ')
+    if len(b.split(':')) > 2:
+        format_ = r'%d/%m/%Y %H:%M:%S'
+    else:
+        format_ = r'%d/%m/%Y %H:%M'
     # day, month, year = a.split('/')
     # hour,minute = b.split(':')
     # t = datetime.datetime(int(year), int(month), int(day), int(hour), int(minute))
-    format_ = r'%d/%m/%Y %H:%M'
+    
     dt_object = datetime.datetime.strptime(x[1], format_)
     return (dt_object.timestamp(), x[0])
 
@@ -102,18 +106,21 @@ def pass_request(json_string):
         return "Saved succesfully"
 
     if command.lower() == "get":
-        lt = get_events_for_queue()
-        lt.sort(key=lambda x: x[0])
-        lt =  list(map(lambda x: [x[0], x[1]], lt[0:int(j_data)])) 
-        al = {}
-        with open(JSON_PATH, encoding='utf8') as outfile:
-            al= json.load(outfile)
-        ret = []
-        for time, key in lt:
-            al[key]["Timestamp"] = time
-            if  time - datetime.datetime.now().timestamp() > 0: ret.append(al[key])
-        return ret
-        
+        try:
+            lt = get_events_for_queue()
+            lt.sort(key=lambda x: x[0])
+            lt =  list(map(lambda x: [x[0], x[1]], lt[0:int(j_data)])) 
+            al = {}
+            with open(JSON_PATH, encoding='utf8') as outfile:
+                al= json.load(outfile)
+            ret = []
+            for time, key in lt:
+                al[key]["Timestamp"] = time
+                if  time - datetime.datetime.now().timestamp() > 0: ret.append(al[key])
+            return ret
+        except Exception as e:
+            return e
+            
     if command.lower() == "edit":
         #print(json.dumps(j_data))
         e = Event(json.dumps(j_data))
@@ -123,24 +130,24 @@ def pass_request(json_string):
     return f"Command not found \'{command}\'"
 
 
-A = {
-    "cmd":"EDIT",
-    "data":{
-        "db9c66e3cf0a49c6a6ee": {
-        "Title": "Systemy Operacyjne",
-        "Link": "https://zoom.us/j/6866658590?pwd=Y0d3c29OakpKQk1MT01ZbW5GVWpudz09",
-        "Comment": "Moje ulubione zajęcia",
-        "Date": "28/03/2021 9:59",
-        "Recurring": "EVERY_WEEK",
-        "Type": "TYPE_BBB"
-        }
-    }
-}
-print(pass_request(json.dumps(A, ensure_ascii=False, indent=4)))
-
-
-
 # A = {
+#     "cmd":"EDIT",
+#     "data":{
+#         "db9c66e3cf0a49c6a6ee": {
+#         "Title": "Systemy Operacyjne",
+#         "Link": "https://zoom.us/j/6866658590?pwd=Y0d3c29OakpKQk1MT01ZbW5GVWpudz09",
+#         "Comment": "Moje ulubione zajęcia",
+#         "Date": "28/03/2021 9:59",
+#         "Recurring": "EVERY_WEEK",
+#         "Type": "TYPE_BBB"
+#         }
+#     }
+# }
+# print(pass_request(json.dumps(A, ensure_ascii=False, indent=4)))
+
+
+
+# # A = {
 #     "cmd":"ADD",
 #     "data":{
 #         "Link":"https://developer.mozilla.org/en-US/docs/Web/API/Window/sessionStorage",
