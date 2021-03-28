@@ -3,7 +3,7 @@
         "Title": "Systemy Operacyjne",
         "Link": "https://zoom.us/j/6866658590?pwd=Y0d3c29OakpKQk1MT01ZbW5GVWpudz09",
         "Comment": "Moje ulubione zajęcia",
-        "Date": "28/03/2021 3:32",
+        "Date": "28/03/2021 5:36",
         "Recurring": "EVERY_WEEK",
         "Type": "TYPE_BBB"
     },
@@ -31,52 +31,36 @@
         "Recurring": "EVERY_WEEK",
         "Type": "TYPE_BBB"
     },
-    "4c6bdc90720d477ebe92": {
-        "Link": "https://developer.mozilla.org/en-US/docs/Web/API/Window/sessionStorage",
-        "Title": "Programowanie w Pythonie",
-        "Date": "31/03/2021 21:12",
-        "Reccurring": "NO",
-        "Comment": "YO",
-        "Type": "TYPE_ZOOM"
-    },
-    "84c404bd233d408e85b1": {
-        "Title": "Mikroelektronika",
+    "422b809728394ac1b6a0": {
+        "Title": "Analiza Matematyczna",
         "Link": "https://www.google.com",
         "Comment": "Moje ulubione zajęcia",
-        "Date": "28/03/2021 18:30",
+        "Date": "29/03/2021 10:30",
         "Recurring": "EVERY_WEEK",
         "Type": "TYPE_BBB"
     },
-    "7ecb383077cf41508726": {
-        "Link": "https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/setInterval",
-        "Title": "WindowOrWorkerGlobalScope.setInterval() - Web APIs | MDN",
-        "Date": "28/02/2021 00:51",
+    "b0c533c1043d41a782cd": {
+        "Link": "https://developer.mozilla.org/pl/",
+        "Title": "MDN Web Docs",
+        "Date": "31/03/2021 03:43",
         "Reccurring": "NO",
         "Comment": "",
         "Type": "TYPE_ZOOM"
     },
-    "fb86a7bcc81a4ca98ae4": {
-        "Link": "https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/tabs/Tab",
-        "Title": "tabs.Tab - Mozilla | MDN",
-        "Date": "28/02/2021 01:55",
+    "ab9de26971034f9da756": {
+        "Link": "https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/Tabs/query",
+        "Title": "tabs.query() - Mozilla | MDN",
+        "Date": "28/02/2021 01:46",
         "Reccurring": "NO",
-        "Comment": "",
+        "Comment": "KURAAW",
         "Type": "TYPE_ZOOM"
     },
-    "9510fdba2bdd4e94a3f1": {
-        "Link": "https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/tabs/Tab",
-        "Title": "tabs.Tab - Mozilla | MDN",
-        "Date": "28/03/2021 01:55",
+    "a2f08fcf3d3a45dba7b9": {
+        "Link": "https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/Tabs/query",
+        "Title": "tabs.query() - Mozilla | MDN",
+        "Date": "28/02/2021 01:46",
         "Reccurring": "NO",
-        "Comment": "",
-        "Type": "TYPE_ZOOM"
-    },
-    "197900f485134adfa830": {
-        "Link": "https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/tabs/Tab",
-        "Title": "tabs.Tab - Mozilla | MDN",
-        "Date": "28/03/2021 00:56",
-        "Reccurring": "NO",
-        "Comment": "",
+        "Comment": "KURAAW",
         "Type": "TYPE_ZOOM"
     }
 }
