@@ -21,7 +21,7 @@ button {
     font-size: 1em;
     font-family: inherit;
     padding: 7px;
-    margin: 5px 15px;
+    margin: 15px 15px;
     text-transform: uppercase;
     transition: .3s;
     cursor: pointer;
@@ -54,4 +54,42 @@ button:active {
 }
 .evt_misc {
     grid-row: 2;
+h1{
+    margin-right: 15px;
+    margin-left: 15px;
+}
+
+h2{
+    margin-left: 15px;
+}
+form{
+    flex-direction: column;
+    display: flex;
+    margin-left: 40px;
+    margin-right: 40px;
+}
+
+input, select{
+    width: 300px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    height: 25px;
+    
+}
+
+
+div{
+    flex-direction: column;
+    display: flex;
+    
+}
+#btn_back{
+    margin-left: 35px;
+    margin-right: 35px;
+
+}
+#add_calendar{
+    align-self: center;
+    width: 300px;
+    text-shadow:rgb(241, 141, 10)
 }

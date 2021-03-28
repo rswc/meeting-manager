@@ -2,18 +2,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="popup.css">
     <title>New meeting</title>
 </head>
 <body>
-    <h1>Add this meeting to your calendar?</h1>
+    <h1 id="add_calendar">Add this meeting to your calendar?</h1>
     <button id="btn_back">No, thanks</button>
     <form id="form">
+        <div id="formelement">
         <label for="url">URL:</label>
         <input id="url" name="Link" required>
+        </div>
+        <div id="formelement">
         <label for="title">Title:</label>
         <input id="title" name="Title">
+        </div>
+        <div id="formelement">
         <label for="date">Date:</label>
         <input type="datetime-local" id="date" name="Date" required>
+        </div>
+        <div id="formelement">
+        <label for="Reccurring">Reccurring:</label>
         <select name="Reccurring" id="reccurring">
             <option value="NO">One-time</option>
             <option value="EVERY_WEEK">Weekly</option>
@@ -21,10 +30,15 @@
             <option value="DAILY">Daily</option>
             <option value="MONTHLY">Monthly</option>
         </select>
+        </div>
+        <div id="formelement">
         <label for="comment">Comment:</label>
         <input id="comment" name="Comment">
+        </div>
+        <div id="formelement">
         <input type="hidden" id="type" name="Type" value="TYPE_ZOOM">
         <button type="submit">send em</button>
+        </div>
     </form>
     <script src="new_meeting_popup.js"></script>
 </body>
