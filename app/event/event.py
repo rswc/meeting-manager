@@ -55,15 +55,6 @@ class Event:
         self.__save(m_json)
     
 
-def pass_request(json_string):
-    req = json.loads(json_string)
-    command = req["cmd"]
-    j_data = req["data"]
-    if command.lower() == 'add':
-        a = Event(json.dumps(j_data, ensure_ascii=False))
-        a.save()
-        return "Saved succesfully"
-    return "Command not found"
 
 def get_timestamp(x):
     # a,b = x[1].split(' ')
@@ -88,6 +79,30 @@ def get_events_for_queue():
     ret = list(map(lambda x: get_timestamp(x), ret))
     return ret
 
+def pass_request(json_string):
+    req = json.loads(json_string)
+    command = req["cmd"]
+    j_data = req["data"]
+    if command.lower() == 'add':
+        a = Event(json.dumps(j_data, ensure_ascii=False))
+        a.save()
+        return "Saved succesfully"
+    if command.lower() == "get":
+        lt = get_events_for_queue()
+        lt.sort(key=lambda x: x[0])
+        lt =  list(map(lambda x: [x[0], x[1]], lt[0:int(j_data)])) 
+        al = {}
+        with open(JSON_PATH, encoding='utf8') as outfile:
+            al= json.load(outfile)
+        ret = []
+        for time, key in lt:
+            al[key]["Timestamp"] = time
+            ret.append(al[key])
+        
+        
+        return ret
+
+    return "Command not found"
 
 
 # A = {
@@ -100,9 +115,13 @@ def get_events_for_queue():
 #         "Comment":"YO",
 #         "Type":"TYPE_ZOOM"}
 #         }
+B = {
+  "cmd": "GET",
+  "data": 9
+}
 
-# dumped=  json.dumps(A, indent=4, ensure_ascii=False)
-# pass_request(dumped)
+dumped=  json.dumps(B, indent=4, ensure_ascii=False)
+print(pass_request(dumped))
 # # get_events_for_queue()
 # data ={}
 # data['Title'] = "Sysopsy"

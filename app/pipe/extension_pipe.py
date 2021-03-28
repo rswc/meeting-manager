@@ -42,7 +42,6 @@ def send_message(message: str):
 send_message("[PIPE] starting pipe process.")
 while True:
     web_extension_request = read_message()
-    send_message(str(type(web_extension_request)))
     try:
         event_response = event.pass_request(web_extension_request)
     except Exception as e:

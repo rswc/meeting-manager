@@ -1,0 +1,35 @@
+@font-face {
+    font-family: Rubik_Mono_One;
+    src: url("/fonts/Rubik_Mono_One/RubikMonoOne-Regular.ttf");
+}
+@font-face {
+    font-family: Lato;
+    src: url("/fonts/Lato/Lato-Regular.ttf");
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    font-family: Lato;
+}
+
+button {
+    border: none;
+    background-color: rgb(241, 141, 10);
+    box-shadow: 3px 3px 7px #0000006e;
+    font-size: 1em;
+    font-family: inherit;
+    padding: 7px;
+    margin: 5px 15px;
+    text-transform: uppercase;
+    transition: .3s;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: rgb(241, 176, 91);
+}
+
+button:active {
+    box-shadow: 1px 1px 3px #0000006e;
+}
