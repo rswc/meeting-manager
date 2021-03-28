@@ -11,12 +11,12 @@ body {
     display: flex;
     flex-direction: column;
     font-family: Lato;
-    background-color: #eee;
+    background-image: linear-gradient(90deg, rgb(255, 255, 255) 0%, rgba(245, 245, 245, 0.938) 100%); 
 }
 
 button {
     border: none;
-    background-color: rgb(241, 141, 10);
+    background-color: rgb(255, 215, 162);
     box-shadow: 3px 3px 7px #0000006e;
     font-size: 1em;
     font-family: inherit;
@@ -41,7 +41,7 @@ button:active {
     margin: 8px 0;
     display: grid;
     grid-template-rows: min-content min-content;
-    grid-template-columns: auto min-content;
+    grid-template-columns: auto max-content;
 }
 
 .evt_title {
@@ -54,6 +54,8 @@ button:active {
 }
 .evt_misc {
     grid-row: 2;
+    color: #000a;
+}
 h1{
     margin-right: 15px;
     margin-left: 15px;
@@ -74,6 +76,9 @@ input, select{
     margin-top: 5px;
     margin-bottom: 5px;
     height: 25px;
+    box-shadow: 3px 3px 7px #00000027;
+    font-size: 1em;
+    font-family: inherit;
     
 }
 
@@ -91,5 +96,14 @@ div{
 #add_calendar{
     align-self: center;
     width: 300px;
-    text-shadow:rgb(241, 141, 10)
+    text-shadow:3px 3px 7px #00000021;
+    margin-top: 15px;
+}
+#btns{
+    align-self:flex-start;
+    flex-direction:row;
+    display: flex;
+}
+.btnback{
+    min-width: 100px;
 }
