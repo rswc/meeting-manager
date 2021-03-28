@@ -7,32 +7,51 @@
     src: url("/fonts/Lato/Lato-Regular.ttf");
 }
 
+* {
+    --primary: rgb(191, 29, 255);
+    --primary-highlight: rgb(198, 97, 245);
+    --primary-text: rgb(247, 240, 228);
+}
+
 body {
     display: flex;
     flex-direction: column;
     font-family: Lato;
     /*background-image: url("b10.jpg");
     */
+    padding-top: 15px;
 }
 
 button {
     border: none;
-    background-color: rgb(255, 214, 29);
-    box-shadow: 3px 3px 7px #0000006e;
+    background-color: transparent;
     font-size: 1em;
     font-family: inherit;
+    color: var(--primary);
     padding: 7px;
     margin: 15px 15px;
     text-transform: uppercase;
     transition: .3s;
     cursor: pointer;
+    font-weight: bold;
 }
-
 button:hover {
-    background-color: rgb(255, 227, 101);
+    background-color: #0001;
+}
+button:active {
+    background-color: #0002;
 }
 
-button:active {
+.btn_prim {
+    background-color: var(--primary);
+    box-shadow: 3px 3px 7px #0000006e;
+    color: var(--primary-text);
+    font-weight: normal;
+}
+.btn_prim:hover {
+    background-color: var(--primary-highlight);
+}
+.btn_prim:active {
     box-shadow: 1px 1px 3px #0000006e;
 }
 
@@ -67,6 +86,8 @@ h1{
 
 h2{
     margin-left: 15px;
+    margin: 5px 15px;
+    color: #0009;
 }
 form{
     flex-direction: column;
@@ -90,7 +111,7 @@ input, select{
     transition: .3s;
 }
 input:focus, select:focus{
-    border-color: rgb(255, 214, 29);
+    border-color: var(--primary);
     background-color: #00000008;
     outline: none;
 }
@@ -107,7 +128,6 @@ div{
 #btn_back{
     margin-left: 35px;
     margin-right: 35px;
-
 }
 #add_calendar{
     align-self: center;
