@@ -54,6 +54,7 @@ button:active {
 }
 .evt_misc {
     grid-row: 2;
+    color: #000a;
 }
 h1{
     margin-right: 15px;
