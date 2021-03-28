@@ -4,3 +4,4 @@ test.py
 sample.json
 __pycache__
 .venv/
+app/event/events.json

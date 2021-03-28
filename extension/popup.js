@@ -37,7 +37,7 @@ browser.runtime.onMessage.addListener((msg) => {
         for (const evt of msg.data) {
             let el = document.createElement("div");
             el.classList.add("evt");
-            el.innerHTML = `<div class="evt_title">${evt.Title}</div><div class="evt_time" data-date="${evt.Date}" data-timestamp="${evt.Timestamp}">00</div><div class="evt_misc">${REC_TRANS[evt.Recurring || '']}</div>`;
+            el.innerHTML = `<div class="evt_title">${evt.Title}</div><div class="evt_time" data-date="${evt.Date}" data-timestamp="${evt.Timestamp}">${timeDiff(evt.Timestamp)}</div><div class="evt_misc">${REC_TRANS[evt.Recurring || '']}</div>`;
             ui.events.appendChild(el);
         }
         interval = window.setInterval(timeFormat, 500);
