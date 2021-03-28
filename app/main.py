@@ -25,10 +25,15 @@ def que_loop(arg):
             e = que.get()
             t = datetime.datetime.fromtimestamp(e[0]) - datetime.datetime.now()
             print(f"Time to the next event: {int(t.total_seconds()/60/60)}h {int((t.total_seconds()/60)%60)}m" )
+            time.sleep(5)
             
-            if t.total_seconds() <= 9000000:
+            if t.total_seconds() <= 30:
                 rl.notify(f"You have a meeting: {ev.get_displayname(e[1])} in {int(t.total_seconds())} seconds")
                 rl.launch_meeting(ev.get_link(e[1]), browser="firefox")
+                exit()
+            
+            if t.total_seconds() > 600:
+                exit()
     
 
 
