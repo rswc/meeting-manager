@@ -7,9 +7,10 @@
 
 ## Python Setup
 
-Simply run `setup.py`:
+Simply install requirements and run `setup.py`:
 
 ``` 
+python -m pip install -r requirements.txt
 python setup.py
 ```
 
