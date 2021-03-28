@@ -90,15 +90,16 @@ def pass_request(json_string):
     if command.lower() == "get":
         lt = get_events_for_queue()
         lt.sort(key=lambda x: x[0])
-        lt =  list(map(lambda x: x[1], lt[0:int(j_data)])) 
+        lt =  list(map(lambda x: [x[0], x[1]], lt[0:int(j_data)])) 
         al = {}
         with open(JSON_PATH, encoding='utf8') as outfile:
             al= json.load(outfile)
         ret = []
-        for key in lt:
+        for time, key in lt:
+            al[key]["Timestamp"] = time
             ret.append(al[key])
         
-        #print(ret)
+        
         return ret
 
     return "Command not found"
@@ -114,13 +115,13 @@ def pass_request(json_string):
 #         "Comment":"YO",
 #         "Type":"TYPE_ZOOM"}
 #         }
-# B = {
-#   "cmd": "GET",
-#   "data": 9
-# }
+B = {
+  "cmd": "GET",
+  "data": 9
+}
 
-# dumped=  json.dumps(B, indent=4, ensure_ascii=False)
-# pass_request(dumped)
+dumped=  json.dumps(B, indent=4, ensure_ascii=False)
+print(pass_request(dumped))
 # # get_events_for_queue()
 # data ={}
 # data['Title'] = "Sysopsy"
