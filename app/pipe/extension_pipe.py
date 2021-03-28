@@ -6,7 +6,6 @@ import struct
 import os
 
 PATH = os.path.dirname(os.path.realpath(__file__))[:-4] + 'event'
-print(PATH)
 sys.path.insert(1, PATH)
 import event
 
