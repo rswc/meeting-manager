@@ -108,7 +108,7 @@ def pass_request(json_string):
         ret = []
         for time, key in lt:
             al[key]["Timestamp"] = time
-            if time > 0: ret.append(al[key])
+            if  time - datetime.datetime.now().timestamp() > 0: ret.append(al[key])
         
         
         return ret
