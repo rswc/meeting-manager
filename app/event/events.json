@@ -46,5 +46,37 @@
         "Date": "28/03/2021 12:30",
         "Recurring": "EVERY_WEEK",
         "Type": "TYPE_BBB"
+    },
+    "7ecb383077cf41508726": {
+        "Link": "https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/setInterval",
+        "Title": "WindowOrWorkerGlobalScope.setInterval() - Web APIs | MDN",
+        "Date": "28/02/2021 00:51",
+        "Reccurring": "NO",
+        "Comment": "",
+        "Type": "TYPE_ZOOM"
+    },
+    "fb86a7bcc81a4ca98ae4": {
+        "Link": "https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/tabs/Tab",
+        "Title": "tabs.Tab - Mozilla | MDN",
+        "Date": "28/02/2021 01:55",
+        "Reccurring": "NO",
+        "Comment": "",
+        "Type": "TYPE_ZOOM"
+    },
+    "9510fdba2bdd4e94a3f1": {
+        "Link": "https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/tabs/Tab",
+        "Title": "tabs.Tab - Mozilla | MDN",
+        "Date": "28/03/2021 01:55",
+        "Reccurring": "NO",
+        "Comment": "",
+        "Type": "TYPE_ZOOM"
+    },
+    "197900f485134adfa830": {
+        "Link": "https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/tabs/Tab",
+        "Title": "tabs.Tab - Mozilla | MDN",
+        "Date": "28/03/2021 00:56",
+        "Reccurring": "NO",
+        "Comment": "",
+        "Type": "TYPE_ZOOM"
     }
 }
