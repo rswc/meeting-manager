@@ -35,6 +35,26 @@ button:active {
     box-shadow: 1px 1px 3px #0000006e;
 }
 
+.evt {
+    box-shadow: 2px 2px 7px #0000006e;
+    padding: 10px;
+    margin: 8px 0;
+    display: grid;
+    grid-template-rows: min-content min-content;
+    grid-template-columns: auto min-content;
+}
+
+.evt_title {
+    grid-row: 1;
+    grid-column: 1;
+}
+.evt_time {
+    grid-row: 1;
+    grid-column: 2;
+}
+.evt_misc {
+    grid-row: 2;
+}
 h1{
     margin-right: 15px;
     margin-left: 15px;

@@ -24,7 +24,11 @@ var port = browser.runtime.connectNative("meeting_manager_pipe");
 Listen for messages from the app.
 */
 port.onMessage.addListener((response) => {
-  console.log("Received: " + JSON.stringify(response));
+    console.log("Received: " + JSON.stringify(response));
+    browser.runtime.sendMessage({
+        action: "RECV",
+        data: response
+    });
 });
 
 browser.runtime.onMessage.addListener((msg) => {

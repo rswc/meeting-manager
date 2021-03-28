@@ -14,7 +14,6 @@ browser.tabs.query({
     currentWindow: true,
     url: "*://*.mozilla.org/*"
 }).then((tabs) => {
-    console.log(tabs);
     if (tabs.length) {
         ui.url.value = tabs[0].url;
         ui.title.value = tabs[0].title;
@@ -23,12 +22,10 @@ browser.tabs.query({
 });
 
 ui.btn_back.addEventListener("click", () => {
-    console.log(ui.btn_back);
     browser.tabs.query({
         active: true,
         currentWindow: true
     }).then((tabs) => {
-        console.log(tabs);
         browser.browserAction.setPopup(
             {
                 tabId: tabs[0].id,
