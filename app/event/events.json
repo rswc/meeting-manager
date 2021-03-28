@@ -3,7 +3,7 @@
         "Title": "Systemy Operacyjne",
         "Link": "https://zoom.us/j/6866658590?pwd=Y0d3c29OakpKQk1MT01ZbW5GVWpudz09",
         "Comment": "Moje ulubione zajęcia",
-        "Date": "28/03/2021 5:36",
+        "Date": "28/03/2021 9:36",
         "Recurring": "EVERY_WEEK",
         "Type": "TYPE_BBB"
     },
@@ -41,26 +41,18 @@
     },
     "b0c533c1043d41a782cd": {
         "Link": "https://developer.mozilla.org/pl/",
-        "Title": "MDN Web Docs",
-        "Date": "31/03/2021 03:43",
+        "Title": "Koło studenckie",
+        "Date": "30/03/2021 9:45",
         "Reccurring": "NO",
         "Comment": "",
         "Type": "TYPE_ZOOM"
     },
-    "ab9de26971034f9da756": {
-        "Link": "https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/Tabs/query",
-        "Title": "tabs.query() - Mozilla | MDN",
-        "Date": "28/02/2021 01:46",
+    "dd0cb3bd751c41b0b080": {
+        "Link": "https://developer.mozilla.org/pl/",
+        "Title": "MDN Web Docs",
+        "Date": "28/02/2021 09:36",
         "Reccurring": "NO",
-        "Comment": "KURAAW",
-        "Type": "TYPE_ZOOM"
-    },
-    "a2f08fcf3d3a45dba7b9": {
-        "Link": "https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/Tabs/query",
-        "Title": "tabs.query() - Mozilla | MDN",
-        "Date": "28/02/2021 01:46",
-        "Reccurring": "NO",
-        "Comment": "KURAAW",
+        "Comment": "",
         "Type": "TYPE_ZOOM"
     }
 }

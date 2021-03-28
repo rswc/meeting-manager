@@ -98,6 +98,7 @@ def pass_request(json_string):
         a = Event(json.dumps(j_data, ensure_ascii=False))
         a.save()
         return "Saved succesfully"
+
     if command.lower() == "get":
         lt = get_events_for_queue()
         lt.sort(key=lambda x: x[0])
@@ -109,11 +110,14 @@ def pass_request(json_string):
         for time, key in lt:
             al[key]["Timestamp"] = time
             if  time - datetime.datetime.now().timestamp() > 0: ret.append(al[key])
-        
-        
         return ret
+        
+    # if command.lower() == "edit":
+    #     e = Event(json.dumps(j_data))
+    #     e.update_json(json.dumps(j_data))
+    #     return ret
 
-    return "Command not found"
+    return f"Command not found \'{command}\'"
 
 
 # A = {
