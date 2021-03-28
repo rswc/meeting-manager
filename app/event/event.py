@@ -77,7 +77,7 @@ def get_events_for_queue():
         ret.append((key, events[key]['Date']))
         #print(key, events[key]['Date'])
     ret = list(map(lambda x: get_timestamp(x), ret))
-    return ret
+    return [(x,y) for x,y in ret if x - datetime.datetime.now().timestamp() > 0]
 
 def get_displayname(id):
     events = {}       
